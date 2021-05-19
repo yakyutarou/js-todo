@@ -22,3 +22,47 @@ body {
 #tab .tab-list {
   margin-left: 15px;
 }
+
+#todo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#todo-table th {
+  text-align:center;
+}
+
+#todo-table th
+#todo-table td{
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.cell-edit-button {
+  width:10%;
+  text-align:center;
+}
+
+.cell-text{
+  width:30%;
+}
+
+.cell-created-at {
+  width: 15%;
+  text-align: center;
+}
+
+.cell-priority {
+  width: 10%;
+  text-align:center;
+}
+
+.cell-limit-at {
+  width: 15%;
+  text-align: center;
+}
+
+.cell-done {
+  width: 10%;
+  text-align: center;
+}
