@@ -24,5 +24,23 @@ function createTodoHtmlString(todo){
     todoTextCell = '<td class="cell-text">' + todo.text + "</td>"
     priorityCell = '<td class="cell-priority">' + todo.priority + "</td>"
   }
-  
+  htmlString += '<tr id ="' + todo.id + '">'
+  htmlString +=
+    '<td class="cell-edit-button"><button data-type="' +
+    editType +
+    '">' +
+    editButtonLabel +
+    "</button></td>"
+  htmlString += todoTextCell
+  htmlString += '<td class="cell-created-at">' + todo.createdAt + "</td>"
+  htmlString += priorityCell
+  htmlString += '<td class="cell-done">'
+  htmlString += '<button data-type="' + doneType + '">'
+  htmlString += doneButtonLabel
+  htmlString += "</button></td>"
+  htmlString += '<td class="cell-delete">'
+  htmlString += '削除'
+  htmlString += "</button></td>"
+  htmlString += "</tr>"
+  return htmlString
 }
