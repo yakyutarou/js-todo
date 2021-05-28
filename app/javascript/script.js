@@ -44,3 +44,9 @@ function createTodoHtmlString(todo){
   htmlString += "</tr>"
   return htmlString
 }
+
+/** todoの完了ステートの変更 */
+function updateTodoState(todo,type){
+  todo.isDone = type ==="done"
+  updateTodoList()
+}
