@@ -50,3 +50,28 @@ function updateTodoState(todo,type){
   todo.isDone = type ==="done"
   updateTodoList()
 }
+
+/** ソート関数 */
+function sortTodos(a,b) {
+  switch(sortIndex){
+    case "created-desc":
+      return Date.parse(b.createdAt) - Date.parse(a.createdAt)
+    case "created-asc":
+      return Date.parse(a.createdAt) - Date.parse(b.createdAt)
+    case "priority-desc":
+      return b.priority - a.priority
+    case "priority-asc":
+      return a.priority - b.priority
+    default:
+      return todoList
+  }
+}
+
+/** 編集モード */
+function editTodo(todo,type){
+  todo.isEdit = type === "edit"
+  updateTodoList()
+}
+
+  }
+}
