@@ -73,5 +73,11 @@ function editTodo(todo,type){
   updateTodoList()
 }
 
-  }
+/** todoを削除 */
+function deleteTodo(todo){
+  //対象のTodoオブジェクトの配列内のインデックスを調べる
+  const index = todoList.findIndex((t) =>t.id === todo.id)
+  //配列から削除する
+  todoList.splice(index,1)
 }
+
