@@ -81,3 +81,18 @@ function deleteTodo(todo){
   todoList.splice(index,1)
 }
 
+/** TodoListの描画を更新する */
+function updateTodoList(){
+  let htmlStrings = ""
+  //HTMLを書き換える
+  todoList
+    .filter(todo => todo.isDone !== (displayTarget === "inbox"))
+    .sort(sortTodos)
+    .forEach(todo =>{
+      //新しいHTMLを出力
+      htmlStrings += createTodoHtmlString(todo)
+      todoMain.innerHTML = htmlStrings
+    })
+  todoMain.innerHtml = htmlStrings
+  //書き換えたHTMLにイベントをバインドする
+}
