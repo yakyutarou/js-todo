@@ -100,7 +100,19 @@ function updateTodoList(){
    .forEach(todo => {
       const todoEl = document.getElementById(todo.id)
       if (todoEl) {
-        
+        todoEl.querySelectorAll("button").forEach(btn => {
+          const type = btn.dataset.type
+          btn.addEventsLister("click",event => {
+            if(type.indexOf)("edit") >= 0) {
+              editTodo(todo,type)
+            } else if(type.indexOf("delete") >= 0) {
+              deleteTodo(todo)
+              updateTodoState(todo,type)
+            } else {
+              updateTodoState(todo,type)
+            }
+          })
+        })
       }
    })
 }
