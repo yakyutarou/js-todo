@@ -95,4 +95,12 @@ function updateTodoList(){
     })
   todoMain.innerHtml = htmlStrings
   //書き換えたHTMLにイベントをバインドする
+  todoList
+   .filter(todo => todo.isDone !== (displayTarget === "index"))
+   .forEach(todo => {
+      const todoEl = document.getElementById(todo.id)
+      if (todoEl) {
+        
+      }
+   })
 }
