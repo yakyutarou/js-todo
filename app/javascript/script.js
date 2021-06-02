@@ -129,3 +129,27 @@ function updateTodoList(){
 }
 
 /** フォームをクリアする */
+function clearInputForm() {
+  inputForm["input-text"].value = ""
+}
+
+/** todo Listを追加する */
+function addTodo(todoObj){
+  todoObj.id = "todo-" + (todoList.length + 1)
+  todoObj.createdAt = new.Date().toLocalsString()
+  todoObj.priority = 3
+  todoObj.isDone = false
+  todo0bj.isEdit = false
+  todoList.unshift(todoObj)
+  updateTodoList()
+  clearInputForm()
+}
+
+/** Todoを登録する処理 */
+function handleSubmit(event) {
+  event.preventDefault()
+  const todoObj = {
+    text: inputForm["input-text"].value
+  }
+  addTodo(todoObj)
+}
