@@ -103,7 +103,7 @@ function updateTodoList(){
         todoEl.querySelectorAll("button").forEach(btn => {
           const type = btn.dataset.type
           btn.addEventsLister("click",event => {
-            if(type.indexOf)("edit") >= 0) {
+            if(type.indexOf("edit") >= 0 ) {
               editTodo(todo,type)
             } else if(type.indexOf("delete") >= 0) {
               deleteTodo(todo)
@@ -166,3 +166,29 @@ function handleSort(e) {
   sortIndex = e.currentTarget.value
   updateTodoList()
 }
+
+/** DOMを変数に登録する */
+function registerDOM(){
+  inputForm = document.querySelector("#input-form")
+  todoMain = document.querySelector("#todo-main")
+  tabButton = document.querySelector("#tab").querySelectorAll("button")
+  sortMenu = document.querySelector("#sort-menu")
+}
+
+/** DOMにイベントを設定する */
+function bindEvents(){
+  inputForm = addEventListener("submit",event => handleSubmit(event))
+  tabButton.forEach(tab => {
+    tab.addEventListener("click",event => handleTabClick(event))
+  })
+  sortMenu.addEventListener("change",event => handleSort(event))
+}
+
+/** 初期化 */
+function initialize(){
+  registerDOM()
+  bindEvents()
+  updateTodoList()
+}
+
+document.addEventListener("DOMContentLoaded", initialize.bind(this))
