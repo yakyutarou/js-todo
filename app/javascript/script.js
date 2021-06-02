@@ -153,3 +153,16 @@ function handleSubmit(event) {
   }
   addTodo(todoObj)
 }
+
+/** インボックス/ 完了済みの切り分け */
+function handleTabClick(event){
+  const me = event.currentTarget
+  displayTarget = me.dataset.target
+  updateTodoList()
+}
+
+/** ソートの実行 */
+function handleSort(e) {
+  sortIndex = e.currentTarget.value
+  updateTodoList()
+}
