@@ -113,6 +113,19 @@ function updateTodoList(){
             }
           })
         })
+        //編集状態の場合はテキストフィールドにもイベントをバウンドする
+        if(todo,isEdit){
+          todoEl.querySelector(".input-edit").addEventListener("input",event =>{
+            todo.text = event.currentTarget.value
+          })
+          todoEl
+            .querySelector(".input-priority")
+            .addEventListener("input",event => {
+              todo.priority = parseInt(event.currentTarget.value, 10)
+          })
       }
-   })
+   }
+ })
 }
+
+/** フォームをクリアする */
