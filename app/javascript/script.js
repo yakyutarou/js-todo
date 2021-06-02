@@ -136,7 +136,7 @@ function clearInputForm() {
 /** todo Listを追加する */
 function addTodo(todoObj){
   todoObj.id = "todo-" + (todoList.length + 1)
-  todoObj.createdAt = new.Date().toLocalsString()
+  todoObj.createdAt = new Date().toLocalsString()
   todoObj.priority = 3
   todoObj.isDone = false
   todo0bj.isEdit = false
